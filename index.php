@@ -115,7 +115,7 @@
 		<div class="container">
 			<div class="content-box col-md-5 col-xs-12">
 				<header>
-					<h3><span>95%</span>das obras concluídas</h3>
+					<h3><span>100%</span>das obras concluídas</h3>
 					<div class="clearfix"></div>
 					<h2>Maximus Pindamonhangaba</h2>
 					<p>Interessado? Preencha o formulário abaixo e nós ligamos para você!</p>
