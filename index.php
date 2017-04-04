@@ -2,99 +2,26 @@
 <html lang="pt-br">
 	<head>
 
-		<?php wp_head(); ?>
-
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>
 
-		<?php 
-			$t_post = get_the_title();
-			$t_home = get_bloginfo('title');
-			$t_cat = single_cat_title();
-			
-			if(is_home()){echo $t_home;}
-			elseif(is_page()){echo $t_home;}
-			elseif(is_category()){echo $t_cat;}
-			else{echo $t_post;} ?>
-		
-		</title>
+		<title><?php echo get_bloginfo('title') ?></title>
 
-		<link href="<?php bloginfo('template_url'); ?>/css/main.css" rel="stylesheet">
-		<link href="<?php bloginfo('template_url'); ?>/css/bootstrap.css" rel="stylesheet">
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/swiper.min.css">
-		
 		<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/favicon.png">
+		<link href="<?php bloginfo('template_url'); ?>/css/bootstrap.css" rel="stylesheet">
+		<link href="<?php bloginfo('template_url'); ?>/css/swiper.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link href="<?php bloginfo('template_url'); ?>/css/main.css" rel="stylesheet">
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+		
 
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.scrollTo.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
-		<script src="<?php bloginfo('template_url'); ?>/js/swiper.min.js"></script>
-		<script src="<?php bloginfo('template_url'); ?>/js/swiper.jquery.min.js"></script>
-
-		<!--Google Analytics-->
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-86845897-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
-
-		<!--Start of Zendesk Chat Script
-		<script type="text/javascript">
-		window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-		d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-		_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-		$.src="//v2.zopim.com/?3ouh11f0fCCct6Rpb5sJQvduUHHR3yKM";z.t=+new Date;$.
-		type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-		</script>
-		End of Zendesk Chat Script-->
-
-    	<!-- Início do script Omnize --> 
-		<script>document.addEventListener('DOMContentLoaded',function(){var JSLink=location.protocol+'//widget.omnize.com',JSElement=document.createElement('script');JSElement.async=!0;JSElement.charset='UTF-8';JSElement.src=JSLink;JSElement.onload=OnceLoaded;document.getElementsByTagName('body')[0].appendChild(JSElement);function OnceLoaded(){wOmz.init({id:3666});}},false);</script> 
-		<!-- Fim do script Omnize -->
-
-		<!--galery-->
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/source/jquery.fancybox.js?v=2.1.5"></script>
-		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/js/fb/source/jquery.fancybox.css?v=2.1.5" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/js/fb/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-
-					$('.fancybox').fancybox({
-						padding: 10,
-						helpers: {
-						overlay: {
-								locked: false
-							}
-						}
-					});
-
-			});
-		</script>
-
+		<?php wp_head(); ?>
 
 
 	</head>
 
-<body>
+<body <?php body_class() ?>>
 
 <header id="top-site">
 	<div class="container">
@@ -316,40 +243,40 @@
 </main>
 
 <section id="form-lightbox">
-		<div class="container">
-			<div class="row">
-				<div class="box-form col-md-7">
-					<header>
-						<h3><strong>Plantão de Vendas</strong></h3>
-						<h4>Interessado? Preencha o formulário abaixo e nós ligamos para você!</h4>	
-					</header>
+	<div class="container">
+		<div class="row">
+			<div class="box-form col-md-7">
+				<header>
+					<h3><strong>Plantão de Vendas</strong></h3>
+					<h4>Interessado? Preencha o formulário abaixo e nós ligamos para você!</h4>	
+				</header>
 
-					<form name="formcontato3" method="post" action="<?php bloginfo('template_url') ?>/send.php" onSubmit="return validaForm();" class="form">
-						<p><input type="text" name="nome" placeholder="Nome" required></p>
-						<p><input type="text" name="email" placeholder="E-mail" required></p>
-						<p><input type="text" name="tel" placeholder="Telefone / Celular" required></p>
-						<p><select name="conhecimento">
-							<option value="" disabled selected>Onde tomou conhecimento do empreendimento?</option>
-							<option value="Google">Google</option>
-							<option value="Facebook">Facebook</option>
-							<option value="Email Marketing">E-mail Marketing</option>
-							<option value="Indicação de Amigo">Indicação de Amigo</option>
-							<option value="Imobiliária">Recebi contato da Imobiliária</option>
-							<option value="Panfleto">Panfleto</option>
-							<option value="Revista/Jornal">Anúncio em Revista/Jornal</option>
-							<option value="Viu o empreendimento e fez contato">Passei em frente o empreendimento e fiz contato com a imobiliária</option>
-						</select></p>
-						<p><input type="submit" class="pull-right" name="enviar" value="enviar"></p>
-						<div class="clearfix"></div>
-					</form>
+				<form name="formcontato3" method="post" action="<?php bloginfo('template_url') ?>/send.php" onSubmit="return validaForm();" class="form">
+					<p><input type="text" name="nome" placeholder="Nome" required></p>
+					<p><input type="text" name="email" placeholder="E-mail" required></p>
+					<p><input type="text" name="tel" placeholder="Telefone / Celular" required></p>
+					<p><select name="conhecimento">
+						<option value="" disabled selected>Onde tomou conhecimento do empreendimento?</option>
+						<option value="Google">Google</option>
+						<option value="Facebook">Facebook</option>
+						<option value="Email Marketing">E-mail Marketing</option>
+						<option value="Indicação de Amigo">Indicação de Amigo</option>
+						<option value="Imobiliária">Recebi contato da Imobiliária</option>
+						<option value="Panfleto">Panfleto</option>
+						<option value="Revista/Jornal">Anúncio em Revista/Jornal</option>
+						<option value="Viu o empreendimento e fez contato">Passei em frente o empreendimento e fiz contato com a imobiliária</option>
+					</select></p>
+					<p><input type="submit" class="pull-right" name="enviar" value="enviar"></p>
+					<div class="clearfix"></div>
+				</form>
 
 
-					<span class="close close-lightbox">X</span>
-					
-				</div>
+				<span class="close close-lightbox">X</span>
+				
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
 
 <div class="galery-hide1" style="display: none;">
@@ -362,6 +289,51 @@
 	<a href="<?php bloginfo('template_url') ?>/img/galeria/4.jpg" data-fancybox-group="gallery2" class="fancybox"></a>
 	<a href="<?php bloginfo('template_url') ?>/img/galeria/5.jpg" data-fancybox-group="gallery2" class="fancybox"></a>
 </div>
+
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/swiper.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/swiper.jquery.min.js"></script>
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86845897-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Início do script Omnize --> 
+<script>document.addEventListener('DOMContentLoaded',function(){var JSLink=location.protocol+'//widget.omnize.com',JSElement=document.createElement('script');JSElement.async=!0;JSElement.charset='UTF-8';JSElement.src=JSLink;JSElement.onload=OnceLoaded;document.getElementsByTagName('body')[0].appendChild(JSElement);function OnceLoaded(){wOmz.init({id:3666});}},false);</script> 
+<!-- Fim do script Omnize -->
+
+<!--galery-->
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/js/fb/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/js/fb/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/fb/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+			$('.fancybox').fancybox({
+				padding: 10,
+				helpers: {
+				overlay: {
+						locked: false
+					}
+				}
+			});
+
+	});
+</script>
 
 <script type="text/javascript">	
 	//Scroll para ID's
@@ -397,6 +369,11 @@
     RdIntegration.integrate('5bc74d9a15dc71ab1bd0bc162ae544d5', 'Maximus - Contato 3', options); //Form 3
 
 </script>
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 
 <?php wp_footer(); ?>
 
